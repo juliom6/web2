@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "es">
+	<head><title>{{ publicacion.titulo }}</title></head>
+
+	<body>
+	<h1>{{ publicacion.titulo }}</h1>
+
+	<p><b>Precio:</b> {{ publicacion.precio }}</p>
+
+	<p><b>Cantidad en stock:</b> {{ publicacion.cantidad_en_stock }}</p>
+
+	<p><b>Fecha de expiracion:</b> {{ publicacion.fecha_expiracion|date:"F j, Y" }}</p>
+
+	<p><b>Nuevo:</b> {% if publicacion.nuevo %}
+    Si
+	{% else %}
+    No
+	{% endif %}</p>
+	<p><b>Descripcion:</b> {{ publicacion.descripcion }}</p>
+	<br>
+	<br>
+	<!--
+	<div align = center>
+		<img src='{{MEDIA_URL}}{{publicacion.imagen}}'>
+	</div>
+	-->
+	</body>
+</html>

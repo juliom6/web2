@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<title>MercaditoLibre</title>
+		<meta charset='utf-8'>
+  	</head>
+  	<body>
+		<div align = center>
+			<br>
+			<br>
+			<!--<h1>Gugle</h1>-->
+			<img src = "{{STATIC_URL}}img/ml.png" alt = "MercaditoLibre">
+			<!--<img src = "{{STATIC_URL}}img/google.png" width = 400 height = 180 alt = "MercaditoLibre">-->
+		</div>
+		<div align = center>
+		<!--<form action = "https://www.google.com.pe/search?" method = "get">-->
+		<form action = "/resultados/" method = "get">	
+			<input type = "text" name = "q" size = "60">
+			<br>
+			<br>
+			<input type = "submit" value = "Buscar">
+			<input type = "reset" value = "Borrar">
+		<form>
+		
+		<br>
+		<br>
+		<br>
+		</div>
+		<h2>Categor&iacute;as</h2>
+		<ul>
+			<li type = "circle"> <a href = "http://localhost:8000/audioyvideo/">Audio y Video</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/celulares/">Celulares</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/computacion/">Computaci&oacute;n</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/libros/">Libros</a></li>	
+			<li type = "circle"> <a href = "http://localhost:8000/instrumentosmusicales/">Instrumentos Musicales</a></li>
+		</ul>
+		<!-- </div>-->
+	  	</body>
+</html>

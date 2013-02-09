@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% if publicaciones %}
+	<p> El termino que buscaste fue: <strong>{{ consulta }}	
+	<p> Encontrados {{ publicaciones|length }} publicacion{{ publicaciones|pluralize }}.</p>
+	
+	<ul>
+		{% for publicacion in publicaciones %}
+		<li><a href="http://localhost:8000/producto/{{ publicacion.id }}/">{{ publicacion.titulo }}</a> </li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p> No hay publicaciones que coincidan con tu criterio de b&uacute;squeda</p>
+{% endif %}

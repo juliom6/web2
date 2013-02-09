@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<title>MercaditoLibre</title>
+		<meta charset='utf-8'>
+  	</head>
+  	<body>
+		<div>
+		<h2>Audio y Video</h2>
+		<ul>
+			<li type = "circle"> <a href = "http://localhost:8000/audio/">Audio({{audiocantidad}})</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/video/">Video({{videocantidad}})</a></li>
+		</ul>
+		</div>
+		<h2>Audio</h2>
+		{% if publicaciones %}
+		<p> Encontrados {{ publicaciones|length }} publicacion{{ publicaciones|pluralize }}.</p>
+	
+		<ul>
+		{% for publicacion in publicaciones %}
+		<li><a href="http://localhost:8000/producto/{{ publicacion.id }}/">{{ publicacion.titulo }}</a> </li>
+		{% endfor %}
+		</ul>
+		{% else %}
+		<p> No hay publicaciones que coincidan con tu criterio de b&uacute;squeda</p>
+		{% endif %}
+	  	</body>
+</html>

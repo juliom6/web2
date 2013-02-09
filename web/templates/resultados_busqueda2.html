@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+     <html>
+         <head>
+             <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+             <style type="text/css">
+                 HTML {
+                     height:100%; /* Le permite al navegador calcular el alto total */
+                     overflow:hidden; /* Evita que aparezcan barras de scroll al hacer
+                                        la ventana muy pequeña */
+                }
+                
+                BODY {
+                    height:100%; /* Le permite al navegador calcular el alto total */
+                    margin:0px; /* Elimina los márgenes */
+                }
+    
+                .separador {
+                    height:5%; /* ocupa el 50% de la pantalla */
+                    background-color: black;
+                }
+    
+                .cuadrado1 {
+                    height:200px; /* La altura del div debe ser fija */
+                    margin:150px auto; /* Desplazo 1/2 de la altura de la caja hacia
+                                                  arriba y centra horizontalmente */
+		    margin-left: 2cm; 
+                    width:200px;
+                    /*border:solid yellow 2px;*/
+                    /*text-align:center;*/
+                }
+		.cuadrado2 {
+                    height:400px; /* La altura del div debe ser fija */
+                    margin:-310px auto; /* Desplazo 1/2 de la altura de la caja hacia
+                                                  arriba y centra horizontalmente */
+		    margin-left: 10cm; 
+                    width:600px;
+                    /*border:solid red 1px;*/
+                    /*text-align:center;*/
+                }
+		.cuadrado3 {
+                    height:80px; /* La altura del div debe ser fija */
+                    margin:-500px auto; /* Desplazo 1/2 de la altura de la caja hacia
+                                                  arriba y centra horizontalmente */
+		    margin-left: 10cm; 
+                    width:500px;
+                    /*border:solid blue 1px;*/
+                    text-align:center;
+                }
+            </style>
+        </head>
+        <body>
+           <div class="separador"></div>
+           <div class="cuadrado1">
+	   <h2>Categor&iacute;as</h2>
+		<ul>	
+			{% for item in lista %}
+			<li type = "circle"> <a href = "http://localhost:8000/{{item.nombre}}/">{{ item.nombre }}({{ item.cantidad}})</a></li>
+			{% endfor %}
+		</ul>
+		<!--<ul>
+			<li type = "circle"> <a href = "http://localhost:8000/audioyvideo/">Audio y Video</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/celulares/">Celulares</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/computacion/">Computacion</a></li>
+			<li type = "circle"> <a href = "http://localhost:8000/libros/">Libros</a></li>	
+			<li type = "circle"> <a href = "http://localhost:8000/instrumentosmusicales/">Instrumentos Musicales</a></li>
+		</ul>-->
+	   </div>
+	   <div class="cuadrado2">
+		<br>
+		<br>
+		{% if publicaciones %}
+		<p> El termino que buscaste fue: <strong>{{ consulta }}	
+		<p> Encontrados {{ publicaciones|length }} publicacion{{ publicaciones|pluralize }}.</p>
+		<ul>
+		{% for publicacion in publicaciones %}
+		<li><a href="http://localhost:8000/producto/{{ publicacion.id }}/">{{ publicacion.titulo }}</a> </li>
+		{% endfor %}
+		</ul>
+		{% else %}
+		<p> No hay publicaciones que coincidan con tu criterio de b&uacute;squeda</p>
+		{% endif %}
+	   </div>
+	   <div class="cuadrado3">
+		<form action = "/resultados/" method = "get">	
+			<input type = "text" name = "q" size = "60">
+			<br>
+			<br>
+			<input type = "submit" value = "Buscar">
+			<input type = "reset" value = "Borrar">
+		<form></div>
+       </body>
+   </html>

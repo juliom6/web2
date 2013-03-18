@@ -8,8 +8,8 @@ class Usuario(models.Model):
 	telefono = models.CharField(max_length = 15, blank = True)
 	direccion = models.CharField(max_length = 80, blank = True)
 	distrito = models.CharField(max_length = 25, blank = True)
-	def __unicode__(self):
-		return self.apodo
+    def __unicode__(self):
+        return self.alias
 
 class Publicacion(models.Model):
 	titulo = models.CharField(max_length = 100, unique = True)

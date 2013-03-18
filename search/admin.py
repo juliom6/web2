@@ -1,4 +1,4 @@
-from search.models import Usuario, Publicacion
+from search.models import Usuario,  Publicacion
 from django.contrib import admin
 
 admin.site.register(Usuario)

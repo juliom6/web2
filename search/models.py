@@ -1,8 +1,8 @@
 from django.db import models
 
 class Usuario(models.Model):
-	alias = models.CharField(max_length = 20, unique = True)
-	nombres = models.CharField(max_length = 40)
+    alias = models.CharField(max_length=20, unique=True)
+	nombres = models.CharField(max_length=40)
 	apellidos = models.CharField(max_length = 40)
 	email = models.EmailField()
 	telefono = models.CharField(max_length = 15, blank = True)
